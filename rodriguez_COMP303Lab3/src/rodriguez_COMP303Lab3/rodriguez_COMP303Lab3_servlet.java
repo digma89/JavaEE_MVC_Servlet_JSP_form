@@ -91,9 +91,10 @@ public class rodriguez_COMP303Lab3_servlet extends HttpServlet {
             e.printStackTrace();
         }
 		
+		//included to send properties to JSP using EL
 		request.setAttribute("pizza", bean);
 		
-			
+		//Send the request and response to the new page
 		RequestDispatcher view =request.getRequestDispatcher("rodriguez_COMP303Lab3_confirm.jsp");  
 		view.forward(request, response);  
 	}
