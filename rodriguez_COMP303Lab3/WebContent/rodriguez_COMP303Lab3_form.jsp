@@ -29,15 +29,12 @@
 	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	    <![endif]-->
 	</head>
-	<body >	
-
-<div style="background-image: url(img/pizz.jpg); position: fixed; no-repeat; top: 0; left: 0; min-width: 100%; min-height: 100%;">		
-
-	<div style="height: 50px;"></div>
+	
+	<body style = "background-image: url(img/pizz.jpg);  no-repeat; top: 0; left: 0; min-width: 100%; min-height: 100%;  height: 100%; width: 100%;">	
+		<div id="header" style="height: 50px;"></div>
 			
-		<div class="container" style="width: 40%; background-color:white; border-radius:10px;" >
-		
-		    <form name="form1" method="post" action="rodriguez_COMP303Lab3_servlet">
+		<div class="container" style="width: 40%; background-color:white; border-radius:10px; padding: 15px;  margin:auto;" >
+			    <form name="form1" method="post" action="rodriguez_COMP303Lab3_servlet">
 		        
 		        <h2 class="form-signin-heading">Please select your order</h2>
 		        
@@ -48,7 +45,7 @@
 		       	<label for="inputAddress" class="sr-only">Street address</label>
 		       	<input type="text" name="inputAddress" id="inputAddress" class="form-control" placeholder="Street address" required>
 		       	<label for="inputPhone" class="sr-only">Phone number</label>
-		       	<input type="number" name="inputPhone" id="inputPhone" class="form-control" placeholder="Phone number" required>
+		       	<input type="number"  name="inputPhone" id="inputPhone" class="form-control" placeholder="Phone number" required>
 		       	<h4 class="form-signin-heading">Which toppings would you like?</h4>
 		       	
 		       	<!-- Check box -->
@@ -80,13 +77,12 @@
 					<label><input type="radio" name="optradio" value="American Express" required>American Express</label>
 				</div>			
 	        	<button class="btn btn-lg btn-primary btn-block"  type="submit">Order</button>
-	        	<div style="height: 10px;"></div>    
+	        	
 	      	
 	      	</form>	
 	    </div> <!-- /container -->
-	    <div style="height: 50px;"></div>    
+	    <div id="footer" style="height: 50px;"></div>    
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	    <script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
-	    </div>	
+	    <script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>	   	
 	</body>
 </html>
