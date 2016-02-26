@@ -1,3 +1,4 @@
+//Diego Rodriguez 
 package rodriguez_COMP303Lab3;
 
 
@@ -36,10 +37,11 @@ public class rodriguez_COMP303Lab3_servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");  
 		PrintWriter out=response.getWriter();  
+		//Variables
 		String[] topic = new String [3];
 		String topics = null;
 		
-		
+		//Save the properties in the model
 		rodriguez_COMP303Lab3_bean bean = new rodriguez_COMP303Lab3_bean();
 		bean.setName(request.getParameter("inputName"));
 		bean.setStreetAddress(request.getParameter("inputAddress"));
@@ -47,6 +49,7 @@ public class rodriguez_COMP303Lab3_servlet extends HttpServlet {
 		topic[0] = request.getParameter("pepperoni");
 		topic[1] = request.getParameter("sausage");
 		topic[2] = request.getParameter("cheese");
+		//make if to join the topis
 		for(int i = 0; i <=2; i++){
 			if(topic[i] != null){
 				if (topics == null){
@@ -59,6 +62,7 @@ public class rodriguez_COMP303Lab3_servlet extends HttpServlet {
 		bean.setTopic(topics);
 		bean.setPay(request.getParameter("optradio"));
 		
+		//Send to DB
 		try {
         	//connect to the DB
 			Class.forName("com.mysql.jdbc.Driver");
@@ -68,16 +72,17 @@ public class rodriguez_COMP303Lab3_servlet extends HttpServlet {
 	        System.out.println(bean.getStreetAddress());
 	        System.out.println(bean.getPhone());
 	        System.out.println(bean.getTopic());
-        	
+	        
+        	//prepared statement query with the data
             PreparedStatement pst = conn.prepareStatement("INSERT INTO pizza (NAME, ADDRESS, PHONE, TOPPINGS, PAYMENT) VALUES (?, ?, ?, ?, ?);");
             pst.setString(1, bean.getName());
             pst.setString(2, bean.getStreetAddress());
             pst.setString(3, bean.getPhone());
             pst.setString(4, bean.getTopic());
-            pst.setString(5, bean.getPay());	    
-            //pst.setString(6, request.getParameter("category"));	 
+            pst.setString(5, bean.getPay());	     
             pst.executeUpdate();
             
+            //Close DB connection
             conn.close();
             out.print("<h1>Added succesfully<h1>");           
 
@@ -86,13 +91,11 @@ public class rodriguez_COMP303Lab3_servlet extends HttpServlet {
             e.printStackTrace();
         }
 		
+		request.setAttribute("pizza", bean);
 		
-		
-		topics = bean.getTopic();
-		out.print(bean.getPay() );
-		
-		//RequestDispatcher rd=request.getRequestDispatcher("rodriguez_COMP303Lab3_confirm.jsp");  
-		//rd.forward(request, response);  
+			
+		RequestDispatcher view =request.getRequestDispatcher("rodriguez_COMP303Lab3_confirm.jsp");  
+		view.forward(request, response);  
 	}
 	
 

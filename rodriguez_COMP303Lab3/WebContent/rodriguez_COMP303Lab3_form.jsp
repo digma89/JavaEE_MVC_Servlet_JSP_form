@@ -29,27 +29,31 @@
 	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	    <![endif]-->
 	</head>
-	<body>
-	
-		<div class="container" style="width: 40%">
-	
-	    	<form name="form1" method="post" action="rodriguez_COMP303Lab3_servlet">
-	        
-	        	<h2 class="form-signin-heading">Please select your order</h2>
-	        
-	        	<!-- Personal information  -->
-	        	<h4 class="form-signin-heading">Personal information</h4>
-	        	<label for="inputName" class="sr-only">Name</label>
-	        	<input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
-	        	<label for="inputAddress" class="sr-only">Street address</label>
-	        	<input type="text" name="inputAddress" id="inputAddress" class="form-control" placeholder="Street address" required>
-	        	<label for="inputPhone" class="sr-only">Phone number</label>
-	        	<input type="number" name="inputPhone" id="inputPhone" class="form-control" placeholder="Phone number" required>
-	        	<h4 class="form-signin-heading">Which toppings would you like?</h4>
-	        	
-	        	<!-- Check box -->
-	        	<div class="checkbox">
-	       			<label> <input type="checkbox" value="Pepperoni" name="pepperoni" > Pepperoni  </label>
+	<body >	
+
+<div style="background-image: url(img/pizz.jpg); position: fixed; no-repeat; top: 0; left: 0; min-width: 100%; min-height: 100%;">		
+
+	<div style="height: 50px;"></div>
+			
+		<div class="container" style="width: 40%; background-color:white; border-radius:10px;" >
+		
+		    <form name="form1" method="post" action="rodriguez_COMP303Lab3_servlet">
+		        
+		        <h2 class="form-signin-heading">Please select your order</h2>
+		        
+		        <!-- Personal information  -->
+		        <h4 class="form-signin-heading">Personal information</h4>
+		        <label for="inputName" class="sr-only">Name</label>
+		       	<input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+		       	<label for="inputAddress" class="sr-only">Street address</label>
+		       	<input type="text" name="inputAddress" id="inputAddress" class="form-control" placeholder="Street address" required>
+		       	<label for="inputPhone" class="sr-only">Phone number</label>
+		       	<input type="number" name="inputPhone" id="inputPhone" class="form-control" placeholder="Phone number" required>
+		       	<h4 class="form-signin-heading">Which toppings would you like?</h4>
+		       	
+		       	<!-- Check box -->
+	        	<div class="checkbox" >
+	       			<label> <input type="checkbox" value="Pepperoni" name="pepperoni"> Pepperoni  </label>
 	        	</div>
 	       		<div class="checkbox">
 	         		<label> <input type="checkbox" value="Sausage" name="sausage"> Sausage </label>
@@ -61,28 +65,28 @@
 	        	<!-- Payment method  -->
 	        	<h4 class="form-signin-heading">Select your payment method</h4>
 	        	<div class="radio">
-			  		<label><input type="radio" name="optradio" value="Cash">Cash</label>
+			  		<label><input type="radio" name="optradio" value="Cash" required>Cash</label>
 				</div>
 				<div class="radio">
-			  		<label><input type="radio" name="optradio" value="Cheque">Cheque</label>
+			  		<label><input type="radio" name="optradio" value="Cheque" required>Cheque</label>
 				</div>
 				<div class="radio">
-		    		<label><input type="radio" name="optradio" value="Mastercard">Mastercard</label>
+		    		<label><input type="radio" name="optradio" value="Mastercard" required>Mastercard</label>
 				</div>
 				<div class="radio">
-	    			<label><input type="radio" name="optradio" value="Visa">Visa</label>
+	    			<label><input type="radio" name="optradio" value="Visa" required>Visa</label>
 				</div>
 				<div class="radio">
-					<label><input type="radio" name="optradio" value="American Express">American Express</label>
+					<label><input type="radio" name="optradio" value="American Express" required>American Express</label>
 				</div>			
-	        	<button class="btn btn-lg btn-primary btn-block" type="submit">Order</button>
+	        	<button class="btn btn-lg btn-primary btn-block"  type="submit">Order</button>
+	        	<div style="height: 10px;"></div>    
 	      	
 	      	</form>	
-	    </div> <!-- /container -->	
+	    </div> <!-- /container -->
+	    <div style="height: 50px;"></div>    
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <script src="bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
+	    </div>	
 	</body>
 </html>
-
-
-
