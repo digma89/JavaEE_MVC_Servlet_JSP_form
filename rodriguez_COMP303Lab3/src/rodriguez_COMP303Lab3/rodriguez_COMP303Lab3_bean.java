@@ -1,8 +1,7 @@
 package rodriguez_COMP303Lab3;
 
-import java.io.Serializable;
 
-public class rodriguez_COMP303Lab3_bean implements Serializable {
+public class rodriguez_COMP303Lab3_bean {
 	
 	public rodriguez_COMP303Lab3_bean(){
 		super();
@@ -13,14 +12,8 @@ public class rodriguez_COMP303Lab3_bean implements Serializable {
 	private String phone;
 	private String topic;
 	private String pay;
-	private String[] topics = new String [3];
 	
-	public String[] getTopics() {
-		return topics;
-	}
-	public void setTopics(String[] topics) {
-		this.topics = topics;
-	}
+	
 	public String getName() {
 		return name;
 	}
